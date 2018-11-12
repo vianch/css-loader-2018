@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS LOADERS 2018</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        /** css variables **/
+        :root {
+            --main-color:    #282a37;
+            --secondary-color: #979fd0;
+            --highlight-color: #1b1e2b;
+        }
+        
+        
+        /** general css **/
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--secondary-color);
+            background: var(--main-color);
+        }
+        
+        .wrapper {
+            display: flex;
+            align-items: center;
+            flex-flow:  row wrap;
+            width: 960px;
+            margin: 0 auto;
+        }
+        
+        .box {
+            padding: 25px;
+            border: 1px solid var(--secondary-color);
+            width: calc(50% - 102px);
+            margin: 25px;
+            background: var(--highlight-color);
+        }
+
+        .box__title {
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        /** LOADERS CSS **?
+        /** Dots **/
+        .loader__dots {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .loader__dot {
+            width: 1rem;
+            height: 1rem;
+            margin: 2rem 0.3rem;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            animation: 0.9s bounce infinite alternate;
+        }
+        
+        .loader__dot:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .loader__dot:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes bounce {
+            to {
+                opacity: 0.3;
+                transform: translate3d(0, -1rem, 0);
+            }
+        }
+
+        .donut {
+            width: 2rem;
+            height: 2rem;
+            margin: 2rem auto;
+            border-radius: 50%;
+            border: 0.5rem solid rgba(151, 159, 208, 0.3);
+            border-top-color: var(--secondary-color);
+            animation: 1.5s spin infinite linear;
+        }
+        
+        .donut__multi {
+            border-bottom-color: var(--secondary-color);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- DOT LOADER-->
+        <div class="box">
+            <div class="loader loader__dots">
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+            </div>
+
+            <h1 class="box__title">Dot loader</h1>
+        </div>
+        
+        <!-- DOT LOADER-->
+        <div class="box">
+            <div class="donut"></div>
+
+            <h1 class="box__title">Donut</h1>
+        </div>
+        
+        <!-- DOT LOADER-->
+        <div class="box">
+            <div class="donut donut__multi"></div>
+
+            <h1 class="box__title">Donut multi</h1>
+        </div>
+        
+        <!-- DOT LOADER-->
+        <div class="box">
+            <div class="loader loader__dots">
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+            </div>
+
+            <h1 class="box__title">Dot loader</h1>
+        </div>
+        
+        <!-- DOT LOADER-->
+        <div class="box">
+            <div class="loader loader__dots">
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+            </div>
+
+            <h1 class="box__title">Dot loader</h1>
+        </div>
+        
+        <!-- DOT LOADER-->
+        <div class="box">
+            <div class="loader loader__dots">
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+            </div>
+
+            <h1 class="box__title">Dot loader</h1>
+        </div>
+    </div>
+</body>
+</html>
