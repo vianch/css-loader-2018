@@ -30,13 +30,18 @@
             width: 960px;
             margin: 0 auto;
         }
+
+        .loader {
+            margin: 2rem auto;
+        }
         
         .box {
             padding: 25px;
             border: 1px solid var(--secondary-color);
-            width: calc(50% - 102px);
+            width: calc(25% - 102px);
             margin: 25px;
             background: var(--highlight-color);
+            height: 150px;
         }
 
         .box__title {
@@ -54,7 +59,6 @@
         .loader__dot {
             width: 1rem;
             height: 1rem;
-            margin: 2rem 0.3rem;
             background: var(--secondary-color);
             border-radius: 50%;
             animation: 0.9s bounce infinite alternate;
@@ -79,15 +83,19 @@
         .donut {
             width: 2rem;
             height: 2rem;
-            margin: 2rem auto;
             border-radius: 50%;
             border: 0.5rem solid rgba(151, 159, 208, 0.3);
+        }
+
+        .donut__single {
             border-top-color: var(--secondary-color);
             animation: 1.5s spin infinite linear;
         }
         
         .donut__multi {
+            border-top-color: var(--secondary-color);
             border-bottom-color: var(--secondary-color);
+            animation: 1.5s spin infinite linear;
         }
 
         @keyframes spin {
@@ -95,6 +103,41 @@
                 transform: rotate(360deg);
             }
         }
+
+        /** Ripple **/
+        .donut__ripple {
+            animation: 1s ripple ease-out infinite;
+        }
+
+        .donut__multi-ripple {
+            width: 2.6rem;
+            height: 2.6rem;
+        }
+
+        .donut__single-ripple {
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            animation: 1.5s ripple infinite;
+        }
+
+        .donut__single-ripple:nth-child(2) {
+            animation-delay:  0.5s;
+        }
+
+        @keyframes ripple {
+            from {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -112,35 +155,31 @@
         
         <!-- DONUT LOADER-->
         <div class="box">
-            <div class="donut"></div>
+            <div class="loader donut donut__single"></div>
 
             <h1 class="box__title">Donut</h1>
         </div>
         
         <!-- DONUT MULTI BORDER LOADER-->
         <div class="box">
-            <div class="donut donut__multi"></div>
+            <div class="loader donut donut__multi"></div>
 
             <h1 class="box__title">Donut multi</h1>
         </div>
         
-        <!-- DOT LOADER-->
+        <!-- RIPPLE LOADER-->
         <div class="box">
-            <div class="loader loader__dots">
-                <div class="loader__dot"></div>
-                <div class="loader__dot"></div>
-                <div class="loader__dot"></div>
-            </div>
+            <div class="loader donut donut__ripple"></div>
 
-            <h1 class="box__title">Dot loader</h1>
+            <h1 class="box__title">Ripple</h1>
         </div>
         
-        <!-- DOT LOADER-->
+        <!-- MULTI RIPPLE LOADER-->
         <div class="box">
-            <div class="loader loader__dots">
-                <div class="loader__dot"></div>
-                <div class="loader__dot"></div>
-                <div class="loader__dot"></div>
+            <div class="lloader donut__multi-ripple">
+                <div class="donut donut__single-ripple"></div>
+                <div class="donut donut__single-ripple"></div>
+                <div class="ddonut onut__single-ripple"></div>
             </div>
 
             <h1 class="box__title">Dot loader</h1>
